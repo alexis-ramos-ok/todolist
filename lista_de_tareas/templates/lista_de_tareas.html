@@ -24,8 +24,8 @@
           </div>
         </div>
       </nav>
-      
-    <div class="container">
+      <div class="page-container">
+    <div class="container contenido">
         <h1 class="text-center my-3">To Do List</h1>
         <ul class="list-group">
             {% for tarea in tareas %}
@@ -64,15 +64,6 @@
         
     </div>
     
-
-      
-
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <p id="modal-message"></p>
-            <button id="modal-button">Aceptar</button>
-        </div>
-    </div>
     <footer class="footer mt-auto py-3">
         <div class="container">
           <div class="text-center">
@@ -80,6 +71,15 @@
           </div>
         </div>
       </footer>
+      </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <p id="modal-message"></p>
+            <button id="modal-button">Aceptar</button>
+        </div>
+    </div>
+
 
     <style>
         .modal {
@@ -109,22 +109,9 @@
       
     }
 
-    .wrapper {
-        min-height: 100%;
-        position: relative;
-        margin-bottom: -{{ footer_height }}; /* Ajusta la altura del footer */
-    }
-
-    .content {
-        padding-bottom: {{ footer_height }};
-    }
-
     .footer {
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        height: {{ footer_height }};
+        margin-bottom: 0;
+        padding-bottom: 0;
         background-color: #000f25; !important; 
         color: #fff !important;
     }
@@ -143,6 +130,14 @@
         display: inline-block; /* Permite el ajuste de ancho dentro del contenedor */
         max-width: 100%; /* Limita el ancho máximo al 100% del contenedor */
     }
+    .page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    }
+    .contenido {
+    flex: 1;
+}
     </style>
     
 
