@@ -9,7 +9,7 @@
 - [Description](#description)
 - [Project Status](#project-status)
 - [Demo](#demo)
-- [Access](#access)
+- [Note on Data Persistence](#note-on-data-persistence)
 - [Technologies Used](#technologies-used)
 - [Contributors](#contributors)
 - [Developers](#developers)
@@ -30,13 +30,13 @@ A live demo of the application is available [here](https://todolist-pjwm.onrende
 ![Demo Screenshot](https://github.com/alexis-ramos-ok/todolist/blob/master/todolist-app.png)
 
 
-## Access
+## Note on Data Persistence
 
-To access the application, follow these steps:
+This application utilizes a free instance of Render.com for deployment. It's important to note that free instances on Render.com may have limitations on data persistence.
 
-1. Visit the following URL: [https://alexis-ramos-ok.github.io/to-do-list](https://alexis-ramos-ok.github.io/to-do-list)
-2. Sign up for a new account or log in to an existing one.
-3. Explore the various features of the application.
+The data entered in the application may persist for a limited time but can be lost after a period of inactivity or instance restart. This is due to resource limitations and automatic cleaning policies on Render.com.
+
+Please make sure to take necessary precautions and backup important data to avoid information loss.
 
 ## Technologies Used
 
