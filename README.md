@@ -27,7 +27,7 @@ The project is currently in development.
 
 A live demo of the application is available [here](https://todolist-pjwm.onrender.com/).
 
-![Demo Screenshot](https://github.com/alexis-ramos-ok/todolist/blob/master/todolist-app.png)
+![Demo Screenshot](https://github.com/alexis-ramos-ok/todolist/blob/master/todolistscreen.png)
 
 
 ## Note on Data Persistence
