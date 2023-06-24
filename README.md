@@ -55,7 +55,7 @@ The project makes use of the following technologies:
 
 ## Developers
 
-- Alex Franco ([@alexfranco](https://github.com/alexfranco)) - Project Lead ![Developer](https://img.shields.io/badge/Developer-1-blueviolet.svg)
+- Alex Franco ([@alexfranco](https://github.com/alexis-ramos-ok)) - Project Lead ![Developer](https://img.shields.io/badge/Developer-1-blueviolet.svg)
 
 ## License
 
