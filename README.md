@@ -25,9 +25,10 @@ The project is currently in development.
 
 ## Demo
 
-A live demo of the application is available [here](https://alexis-ramos-ok.github.io/to-do-list-demo).
+A live demo of the application is available [here]([https://alexis-ramos-ok.github.io/to-do-list-demo](https://todolist-pjwm.onrender.com/)).
 
-![Demo Screenshot](demo-screenshot.png)
+![Demo Screenshot](![todolist-app](https://github.com/alexis-ramos-ok/todolist/assets/124452027/8039ff80-53c7-4f91-bdac-5ccd65b73680)
+t.png)
 
 ## Access
 
