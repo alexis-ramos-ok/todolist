@@ -1,32 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <title>Task List</title>
-</head>
-<body>
-
-    <nav class="navbar navbar-expand-md navbar-light bg-light">
-        <div class="container">
-          <a class="navbar-brand" href="{% url 'lista_de_tareas' %}">Task List</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'about' %}">About</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-
-    <div class="container">
+{% extends 'dias_de_la_semana.html' %}
+{% block content %}
+    <div class="container contenido">
         <h1 class="text-center my-3">Create Task</h1>
         <form method="post" class="row g-3">
             {% csrf_token %}
@@ -35,15 +9,13 @@
             </div>
             <div class="col-md-6 offset-md-3">
                 <textarea name="{{ form.descripcion.name }}" class="form-control" id="{{ form.descripcion.auto_id }}" placeholder="Description task">{% if form.descripcion.value != None %}{{ form.descripcion.value }}{% endif %}</textarea>
-            </div>
-
-            
+            </div>            
             <div class="col-md-6 offset-md-3">
                 <label for="{{ form.hora.auto_id }}" class="form-label">Time</label>
-                <input type="time" name="{{ form.hora.name }}" value="{{ form.hora.value|time:'H:i' }}" class="form-control" id="{{ form.hora.auto_id }}">
+                <input type="time" name="{{ form.hora.name }}" value="{{ form.hora.value|time:'H:i' }}" class="form-control" id="{{ form.hora.auto_id }}" required>
             </div>
             <div class="col-md-6 offset-md-3 text-center">
-                <a href="{% url 'lista_de_tareas' %}" class="btn btn-secondary">
+                <a href="{% url 'lista_de_tareas' dia %}" class="btn btn-secondary">
                     <i class="fas fa-arrow-left"></i>
                 </a>
                 <button type="submit" class="btn btn-success">
@@ -52,85 +24,4 @@
             </div>
         </form>  
     </div>
-
-    <footer class="footer mt-auto py-3">
-        <div class="container">
-          <div class="text-center">
-            © 2023 AlexDev Projects. All rights reserved.
-          </div>
-        </div>
-      </footer>
-
-      <style>
-
-        html,
-    body {
-        height: 100%;
-        background-color: #c0fafa;
-      
-    }
-
-    .wrapper {
-        min-height: 100%;
-        position: relative;
-        margin-bottom: -{{ footer_height }}; /* Ajusta la altura del footer */
-    }
-
-    .content {
-        padding-bottom: {{ footer_height }};
-    }
-
-    .footer {
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        height: {{ footer_height }};
-        background-color: #000f25; !important; 
-        color: #fff !important;
-    }
-
-    .navbar {
-            background-color: #000f25 !important;
-    }
-
-    .navbar .navbar-brand,
-    .navbar .nav-link {
-        color: #fff !important; /* Color del texto en el nav */
-    }
-    .task-title {
-        overflow-wrap: break-word; /* Permite el ajuste de palabras en varias líneas */
-        word-break: break-all; /* Permite el ajuste de palabras en cualquier posición */
-        display: inline-block; /* Permite el ajuste de ancho dentro del contenedor */
-        max-width: 100%; /* Limita el ancho máximo al 100% del contenedor */
-    }
-    @media (max-width: 768px) {
-  .navbar-nav {
-    text-align: center;
-  }
-  
-  .navbar-nav .nav-item {
-    display: block;
-  }
-  
-  .navbar-nav .nav-link {
-    display: inline-block;
-    padding-left: 0;
-    padding-right: 0;
-    font-size: 18px;
-  }
-}
-    </style>
-    <script>
-            document.addEventListener('DOMContentLoaded', function() {
-  var navbarToggle = document.querySelector('.navbar-toggler');
-  var navbarCollapse = document.querySelector('.navbar-collapse');
-
-  navbarToggle.addEventListener('click', function() {
-    navbarCollapse.classList.toggle('show');
-  });
-});
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-</body>
-</html>
+    {% endblock %}
